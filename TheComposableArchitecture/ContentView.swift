@@ -6,21 +6,38 @@
 //
 
 import SwiftUI
+import ComposableArchitecture
 
 struct ContentView: View {
-    var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+  let store: StoreOf<Feature>
+  
+  var body: some View {
+    WithViewStore(self.store, observe: { $0 }) { viewStore in
+      VStack {
+        HStack {
+          Button("−") { viewStore.send(.decrementButtonTapped) }
+            .padding()
+          Text("\(viewStore.count)")
+            .padding()
+          Button("+") { viewStore.send(.incrementButtonTapped) }
+            .padding()
         }
-        .padding()
+
+        Button("Number fact") { viewStore.send(.numberFactButtonTapped) }
+          .padding()
+      }
+      .alert(
+        item: viewStore.binding(
+          get: { $0.numberFactAlert.map(FactAlert.init(title:)) },
+          send: .factAlertDismissed
+        ),
+        content: { Alert(title: Text($0.title)) }
+      )
     }
+  }
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
+struct FactAlert: Identifiable {
+  var title: String
+  var id: String { self.title }
 }

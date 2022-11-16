@@ -11,6 +11,8 @@
 		FAE410752922131200FD74CE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE410742922131200FD74CE /* ContentView.swift */; };
 		FAE410772922131400FD74CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAE410762922131400FD74CE /* Assets.xcassets */; };
 		FAE4107A2922131400FD74CE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAE410792922131400FD74CE /* Preview Assets.xcassets */; };
+		FAE410822922133700FD74CE /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = FAE410812922133700FD74CE /* ComposableArchitecture */; };
+		FAE410842922134200FD74CE /* Feature.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE410832922134200FD74CE /* Feature.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +21,8 @@
 		FAE410742922131200FD74CE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		FAE410762922131400FD74CE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FAE410792922131400FD74CE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		FAE410832922134200FD74CE /* Feature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feature.swift; sourceTree = "<group>"; };
+		FAE4108529222A4400FD74CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,6 +30,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAE410822922133700FD74CE /* ComposableArchitecture in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -51,8 +56,10 @@
 		FAE410712922131200FD74CE /* TheComposableArchitecture */ = {
 			isa = PBXGroup;
 			children = (
+				FAE4108529222A4400FD74CE /* Info.plist */,
 				FAE410722922131200FD74CE /* TheComposableArchitectureApp.swift */,
 				FAE410742922131200FD74CE /* ContentView.swift */,
+				FAE410832922134200FD74CE /* Feature.swift */,
 				FAE410762922131400FD74CE /* Assets.xcassets */,
 				FAE410782922131400FD74CE /* Preview Content */,
 			);
@@ -83,6 +90,9 @@
 			dependencies = (
 			);
 			name = TheComposableArchitecture;
+			packageProductDependencies = (
+				FAE410812922133700FD74CE /* ComposableArchitecture */,
+			);
 			productName = TheComposableArchitecture;
 			productReference = FAE4106F2922131200FD74CE /* TheComposableArchitecture.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +121,9 @@
 				Base,
 			);
 			mainGroup = FAE410662922131200FD74CE;
+			packageReferences = (
+				FAE410802922133700FD74CE /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+			);
 			productRefGroup = FAE410702922131200FD74CE /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -137,6 +150,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAE410842922134200FD74CE /* Feature.swift in Sources */,
 				FAE410752922131200FD74CE /* ContentView.swift in Sources */,
 				FAE410732922131200FD74CE /* TheComposableArchitectureApp.swift in Sources */,
 			);
@@ -270,6 +284,7 @@
 				DEVELOPMENT_TEAM = H4MSW7FUBB;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TheComposableArchitecture/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -299,6 +314,7 @@
 				DEVELOPMENT_TEAM = H4MSW7FUBB;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TheComposableArchitecture/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -339,6 +355,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		FAE410802922133700FD74CE /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.9.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		FAE410812922133700FD74CE /* ComposableArchitecture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FAE410802922133700FD74CE /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			productName = ComposableArchitecture;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = FAE410672922131200FD74CE /* Project object */;
 }
